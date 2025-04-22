@@ -7,7 +7,7 @@ A minimal light/dark theme switcher using pure HTML, CSS, and JavaScript.
 
 ## 🔗 Live Demo
 
-[👉 View the demo](https://nikolaidev.github.io/project-theme-toggle/)
+[👉 View the demo](https://nickolaidev.github.io/project-theme-toggle/)
 
 ## 🚀 Technologies Used
 
