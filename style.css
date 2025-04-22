@@ -1,0 +1,172 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: aquamarine;
+    --border-color: #000000;
+}
+  
+body.dark {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --accent-color: #00ffc8;
+    --border-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.bt, .btFooter {
+    border-bottom: 1px solid var(--border-color);
+    padding: 5px 15px;
+    width: 50px;
+    text-align: center;
+    transition: all 0.2s linear;
+}
+
+.bt:hover, .btFooter:hover {
+    border-bottom: 1px solid aquamarine;
+    cursor: pointer;
+    background-color: rgba(127, 255, 212, 0.25);
+    font-weight: 500;
+}
+
+.themeToggle {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background-color: var(--card-color);
+    border: 1px solid var(--text-color);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .themeToggle .icon {
+    font-size: 15px;
+    z-index: 1;
+  }
+  
+  .toggleBall {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    left: 3px;
+    transition: left 0.3s ease;
+  }
+  
+  body.dark .toggleBall {
+    left: 33px;
+  }
+.main {
+    height: 600px;
+    display: grid;
+    grid-template-areas: 
+        "leftSide rightSide rightSide"
+        "leftSide rightSide rightSide"
+        "bottom   bottom    bottom";
+    gap: 5px
+}
+
+.leftSide {
+    background-color: gainsboro;
+    grid-area: leftSide;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.rightSide {
+    background-color: gainsboro;
+    grid-area: rightSide;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.bottom {
+    background-color: gainsboro;
+    grid-area: bottom;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.footer {
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: gainsboro;
+    display: block;
+    justify-items: center;
+    padding: 10px;
+    color: black;
+}
+
+.btFooter {
+    border-bottom: 1px solid black;
+}
+
+.navFooter {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0px;
+}
+
+
+@media (max-width: 540px) {
+    .header {
+        display: block;
+        justify-items: center;
+    }
+
+
+    .nav {
+        margin-top: 0;
+        display: block;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .bt {
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .themeToggle {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .navFooter {
+        flex-wrap: wrap;
+    }
+    
+    .main {
+        grid-template-areas: 
+            "leftSide"
+            "leftSide"
+            "rightSide"
+            "rightSide"
+            "bottom";
+    }
+}
